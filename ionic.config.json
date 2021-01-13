@@ -1,5 +1,7 @@
 {
   "name": "empleos",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
