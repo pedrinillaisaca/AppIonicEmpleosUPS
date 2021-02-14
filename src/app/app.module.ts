@@ -8,17 +8,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment.prod';
 //firebase
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-//import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+//
+import { HttpClientModule } from '@angular/common/http';
 
-
-
+//modulos nativos para la camara 
+import {Camera} from '@ionic-native/camera/ngx';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -33,10 +35,15 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    }),
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

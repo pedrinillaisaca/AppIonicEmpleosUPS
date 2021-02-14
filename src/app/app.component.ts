@@ -23,6 +23,21 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     },
     {
+      title: 'Crear Usuarios',
+      url: '/crear-user',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Localizacion',
+      url: '/localizacion',
+      icon: 'paper-plane'
+    },
+    {
+      title: 'Listar Usuarios',
+      url: '/list-users',
+      icon: 'paper-plane'
+    },
+    {
       title: 'Favorites',
       url: '/folder/Favorites',
       icon: 'heart'

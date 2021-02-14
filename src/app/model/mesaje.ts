@@ -3,5 +3,5 @@ export class Mensaje{
     name: string;
     email: string;
     mensaje: string;
-
+    image:any;
 }

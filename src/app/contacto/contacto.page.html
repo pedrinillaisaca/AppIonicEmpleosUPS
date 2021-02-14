@@ -9,8 +9,6 @@
 
 
 <ion-content>
-    <h3>HOLA UPS</h3>
-    <!-- <h4>{{mensajee.name}}</h4> -->
 
     <ion-item>
         <ion-label position="floating">Nombre:</ion-label>
@@ -39,10 +37,25 @@
         {{mensajee.email}}
     </ion-item>
 
+    <app-take-photo source="galeria" (imageSelected)="imageSeleccionado($event)" (uploadFinished)="uploadFinished($event)"></app-take-photo>
     <ion-item>
         <ion-button color="dark" (click)="guardar()">Enviar</ion-button>
     </ion-item>
 
 
+    <ion-card>
+        <ion-img [src]="imgData">
+
+        </ion-img>
+    </ion-card>
+    <!-- <ion-item>
+        <ion-button color="dark" (click)="tomarFoto()">Tomar Fotografia</ion-button>
+    </ion-item> -->
+
+
+
+    <!-- <ion-img [src]="imgURL"></ion-img>
+    Separador
+    <ion-img [src]="imgData"></ion-img> -->
 
 </ion-content>

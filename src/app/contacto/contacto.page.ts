@@ -1,5 +1,8 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
+
+import { BehaviorSubject } from 'rxjs';
 import { Mensaje } from '../model/mesaje';
 import { ContactosService } from '../service/contactos.service';
 
@@ -19,8 +22,23 @@ export class ContactoPage implements OnInit {
   mensajee:Mensaje=new Mensaje();//Es importante iniciar el objeto
   trabaja: boolean=false;
   lugarTrabajo:string;
+  imgData:string;
+  imgURL:string;
 
-  constructor(public router: Router,public contactosService: ContactosService) { }
+
+  constructor(public route: ActivatedRoute,
+    public router: Router,
+    public contactosService: ContactosService) { 
+
+    this.route.queryParams.subscribe(params => {
+      console.log("CONTACTO PAGE");
+      console.log(params);
+      if (this.router.getCurrentNavigation().extras.queryParams) {
+        this.mensajee = this.router.getCurrentNavigation().extras.queryParams.contacto;
+        console.log(this.mensajee);
+      }
+    });
+  }
 
   ngOnInit() {
   }
@@ -38,5 +56,14 @@ export class ContactoPage implements OnInit {
     }
 
     this.router.navigate(['/confirmacion-mensaje'],params); //esto debe redireccionar a la pagina de config mensaje
+  }
+
+  imageSeleccionado(data:string){
+    this.imgData=data;
+  }
+ 
+
+  uploadFinished(data){
+    this.mensajee.image=data;
   }
 }

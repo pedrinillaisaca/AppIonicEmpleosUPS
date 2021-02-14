@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ContactoPageRoutingModule } from './contacto-routing.module';
 
 import { ContactoPage } from './contacto.page';
+import { TakePhotoComponent } from '../components/take-photo/take-photo.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ContactoPage } from './contacto.page';
     IonicModule,
     ContactoPageRoutingModule
   ],
-  declarations: [ContactoPage]
+  declarations: [ContactoPage,TakePhotoComponent]
 })
 export class ContactoPageModule {}

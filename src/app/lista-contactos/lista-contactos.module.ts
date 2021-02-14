@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ListaContactosPageRoutingModule } from './lista-contactos-routing.module';
 
 import { ListaContactosPage } from './lista-contactos.page';
+import { TakePhotoComponent } from '../components/take-photo/take-photo.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ListaContactosPage } from './lista-contactos.page';
     IonicModule,
     ListaContactosPageRoutingModule
   ],
-  declarations: [ListaContactosPage]
+  declarations: [ListaContactosPage,TakePhotoComponent]
 })
 export class ListaContactosPageModule {}
